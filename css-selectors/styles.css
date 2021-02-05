@@ -1,7 +1,14 @@
+.page > p:first-of-type {
+    color: #7E8184;
+    font-style: italic;
+}
+
+/* 
 .synopsis {
     color: #7E8184;
     font-style: italic;
-}    
+}
+*/
 .synopsis em {
     font-style: normal;
 }
@@ -34,7 +41,9 @@
     background-color: #5995DA;
 }
 
-
+#button-2 {
+    background-color: #D55C5F;
+}
 
 .call-to-action:link,
 .call-to-action:visited {
@@ -80,3 +89,7 @@ a:visited:active {
 p:last-of-type {
     margin-bottom: 50px;
 }
+
+#button-2 {
+    color:#5D6063;
+} /* (This is painful to maintain) */
