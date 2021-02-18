@@ -37,14 +37,14 @@ body {
 }
 
 .sky {
-    background-color: lightblue;
+    background-color: grey;
     width: 500px;
     height: 580px;
     position: absolute;
 }
 
 .ground {
-    background-color: brown;
+    background-color: black;
     width: 500px;
     height: 150px;
     position: absolute;
@@ -53,7 +53,7 @@ body {
 }
 
 .bird {
-    background-color: yellow;
+    background-image: url('saucer.png') ;
     position: absolute;
     width: 60px;
     height: 45px;
@@ -61,14 +61,14 @@ body {
 }
 
 .obstacle {
-    background-image: url('flappy_tube.png');
+    background-image: url('grey_pipe.png');
     width: 60px;
     height: 300px;
     position: absolute;
 }
 
 .topObstacle {
-    background-image: url('flappy_tube.png');
+    background-image: url('grey_pipe.png');
     transform: rotate(180deg);
     width: 60px;
     height: 300px;
