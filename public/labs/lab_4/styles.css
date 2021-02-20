@@ -49,7 +49,8 @@ body {
 .flex-outer > li > label,
 .flex-outer li p {
     flex: 1 0 120px;
-    max-width: 220px;    
+    max-width: 220px;
+    type    
 }
 
 .flex-outer > li > label +*,
@@ -67,7 +68,7 @@ body {
   border: none;
 }
 
-.flex-outer li button {
+.flex-outer li button[type='submit'] {
     margin-left: auto;
     padding: 8px 16px;
     border: none;

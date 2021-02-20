@@ -12,59 +12,67 @@
     
     <div class="container">
         <div class="title"><h1>Rodolfo Castro Lab 4</h1></div>
-        <form action="/api" method="POST" >
-            <ul class="flex-outer">
+        <form action = "/api" method = "POST" >
+            <ul class="flex-outer" type="checkbox">
                 <li>
                     <label for="fname">First Name</label>
-                    <input type="text" id="fname" placeholder="Enter your first name here">
+                    <input type="text" id="fname" placeholder="Enter your first name here" name="fname">
                 </li>
                 <li>
                     <label for="lname">Last Name</label>
-                    <input type="text" id="lname" placeholder="Enter your last name here">
+                    <input type="text" id="lname" placeholder="Enter your last name here"
+                    name ="lname">
                 </li>
                 <li>
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email here">
+                    <input type="email" id="email" placeholder="Enter your email here"
+                    name="email">
                 </li>
                 <li>
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number here">
+                    <input type="tel" id="phone" placeholder="Enter your phone number here"
+                    name="phone">
                 </li>
                 <li>
                     <label for="message">Message</label>
-                    <textarea name="message" rows="6" id="message" placeholder="Enter your message here"></textarea>
+                    <textarea name="message" rows="6" id="message" rows="5" cols="33" placeholder="Enter your message here" type="checkbox" name="message"></textarea>
                 </li>
                 <li>
                     <p>Age</p>
-                    <ul class ="flex-inner">
+                    <ul class ="flex-inner" type="checkbox">
                         <li>
-                            <input type="checkbox" id="twenty-to-twentynine">
+                            <input type="checkbox" id="twenty-to-twentynine" name="twenty-to-twentynine">
                             <label for= "twenty-to-twentynine">20-29</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="thirty-to-thirtynine">
+                            <input type="checkbox" id="thirty-to-thirtynine"
+                            name="thirty-to-thirtynine">
                             <label for= "thirty-to-thirtynine">30-39</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="fourty-to-fourtynine">
+                            <input type="checkbox" id="fourty-to-fourtynine"
+                            name="fourty-to-fourtynine">
                             <label for= "fourty-to-fourtynine">40-49</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="Fifty-to-Fiftynine">
+                            <input type="checkbox" id="Fifty-to-Fiftynine"
+                            name="Fifty-to-Fiftynine">
                             <label for= "Fifty-to-Fiftynine">50-59</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="Sixty-to-Sixtynine">
-                            <label for= "Sixty-to-Sixtynine">60-69</label>
+                            <input type="checkbox" id="Sixty-to-Sixtynine"
+                            name="Sixty-to-Sixtynine">
+                            <label for= "Sixty-to-Sixtynine"
+                            >60-69</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="other">
+                            <input type="checkbox" id="other" name="">
                             <label for= "other">Other</label>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="button" method="POST" name="button">Submit</button>
                 </li>   
             </ul>
         </form>
