@@ -1,4 +1,4 @@
-describe('Lab 3', () => {
+describe('labs/lab_3', () => {
   it('Successfully loads with valid HTML', () => {
     cy.fixture('test_values').then((json) => {
       const labUrl = `${json.test_context || ''}labs/lab_3/`;
