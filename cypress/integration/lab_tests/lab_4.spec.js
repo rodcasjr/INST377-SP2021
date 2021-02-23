@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* eslint-disable no-unused-expressions */
 describe('/labs/Lab_4', () => {
   it('Successfully loads with valid HTML', () => {
@@ -7,13 +6,6 @@ describe('/labs/Lab_4', () => {
       cy.visit(labUrl); // change URL to match your dev URL
       cy.htmlvalidate();
     });
-=======
-describe('Lab 4', () => {
-  it("All your HTML is valid to W3C standards: check error for details of what's wrong", () => {
-    const labUrl = 'labs/lab_4/';
-    cy.visit(labUrl); // change URL to match your dev URL
-    cy.htmlvalidate();
->>>>>>> 71de18f657cb88e0e18449b2b53406b61eada9c4
   });
 
   it('should contain your name and lab number within the page title', () => {
