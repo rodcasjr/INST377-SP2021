@@ -119,6 +119,7 @@ body {
     .form-row textarea {
         width: 250px;
         height: initial;
+        background-color:#FFFFFF
     }
     .form-row label {
         text-align: right;
@@ -140,5 +141,60 @@ body {
     .legacy-form-row legend {
         float: left;
     }
+    .form-row .instructions {
+        margin-left: 120px;
+    }
+    .form-row .checkbox-label {
+        margin-left: 120px;
+        width: auto;
+    }
+    .form-row button {
+        margin-left:120px;
+    }
+}
+
+.form-row textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 7px;
+    resize: none;
+}
+
+.form-row .instructions {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-row .checkbox-label {
+    margin-bottom: 0;
+}
+
+.form-row button {
+    font-aize: 16px;
+    font-weight: bold;
+
+    color: #FFFFFF;
+    background-color: #5995DA;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: #76AEED;
+}
+
+.form-row button:active {
+    background-color: #407FC7;
 }
 
