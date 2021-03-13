@@ -1,0 +1,36 @@
+.suggestions {
+    box-sizing: border-box;
+}
+
+
+html {
+    background-color:#4C83A9;
+    font-size: medium;
+}
+
+.suggestions li {
+  background: #B8DBF5;
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 10;
+  padding: 20px;
+  left: 0%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+
+.suggestions li:nth-child(even) {
+  margin: 10px;
+
+}
+
+.suggestions li:nth-child(odd) {
+  margin: 10px;
+}
+
+.mapid { 
+    height: 180px; 
+}

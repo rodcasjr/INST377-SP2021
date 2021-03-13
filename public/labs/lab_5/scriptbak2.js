@@ -1,30 +1,28 @@
-function mapInit() {
-  const mymap = L.map('mapid').setView([38.9897, -76.5614], 13);
-
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1Ijoicm9kY2FzanIiLCJhIjoiY2ttNTBlNGI2MDlyYzJvczN6dWJ6NWxzMCJ9.MdUiDSdtwkrUSRPp1MpqxQ'
-  }).addTo(mymap);
-  console.log('mymap', mymap);
-  return mymap;
-}
+// function mapInit() {
+//   // follow the Leaflet Getting Started tutorial here
+//   return map;
+// }
+// pk.eyJ1Ijoicm9kY2FzanIiLCJhIjoiY2ttNTBnYnlhMGExbjJ2cDVhZGF3ZjZwdSJ9.MwGckoAlirDfq0tKZcEx7Q
 
 // async function dataHandler(mapObjectFromFunction) {
-async function dataHandler(mapObjectFromFunction) {
+async function windowActions() { 
   console.log('window loaded');
   const form = document.querySelector('.userform'); // target form specifically
   const search = document.querySelector('#zip');
   const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-  const arrayName = await request.json();
-  const targetList = document.querySelector('.target-list');
 
-  function findMatches(zipToMatch) {
-    return arrayName.filter((restaurants) => restaurants.zip.includes(zipToMatch));
-    
+  const arrayName = await request.json();
+
+  //   fetch(endpoint).then((blob) => console.log(blob));
+  //   const prom = fetch(endpoint)
+  //     .then((blob) => blob.json())
+  //     .then((data) => names.push(...data));
+
+  function findMatches(wordToMatch, zip) {
+    return names.filter((restaurants) => {
+      const regex = new RegExp(wordToMatch, 'gi');
+      return restaurants.name.match(regex);
+    });
   }
 
   function displayMatches(event) {
@@ -38,13 +36,14 @@ async function dataHandler(mapObjectFromFunction) {
                     <span class= "title">${restoName}</span>
                     <span class= "address">${restaurants.address_line_1}</span>
                     <span class= "city">${restaurants.city}</span>
+                    <span class= "category">${restaurants.category}</span>
                 </li>
                 `;
     }).join('');
     suggestions.innerHTML = html;
   }
 
-  const searchInput = document.querySelector('.input');
+  const searchInput = document.querySelector('.search');
   const suggestions = document.querySelector('.suggestions');
 
   searchInput.addEventListener('change', displayMatches);
@@ -53,12 +52,13 @@ async function dataHandler(mapObjectFromFunction) {
   });
 }
 
+
 //   // and target mapObjectFromFunction to attach markers
+// }
 
+// async function windowActions() {
+//   const map = mapInit();
+//   await dataHandler(map);
+// }
 
-async function windowActions() {
-  const map = mapInit();
-  await dataHandler(map);
-}
-
-window.onload = dataHandler;
+window.onload = windowActions;
