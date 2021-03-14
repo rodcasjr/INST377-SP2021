@@ -59,12 +59,6 @@ async function dataHandler(mapFromLeaflet) {
       const longLat = item.geocoded_column_1.coordinates;
       console.log('markerLongLat', longLat[0], longLat[1]);
       const marker = L.marker([longLat[1], longLat[0]]).addTo(mapFromLeaflet);
-
-      // const appendItem = document.createElement('li');
-      // appendItem.classList.add('block');
-      // appendItem.classList.add('list-item');
-      // appendItem.classList.innerHTML = `<div class="list-header is-size-5">$(item.name)</div>address class ="is-size-6">${item.address_line_1}</address>`;
-      // suggestions.append(appendItem);
     });
   }
   form.addEventListener("submit", (event) => {
