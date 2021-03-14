@@ -7,11 +7,17 @@
 // async function dataHandler(mapObjectFromFunction) {
 async function windowActions() { 
   console.log('window loaded');
-  const form = document.querySelector('.userform'); // target form specifically
-  const search = document.querySelector('#zip');
-  const request = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+  const form = document.querySelector('.userform'); 
+  const search = document.querySelector('#search');
+  const targetList = document.querySelector('.target-list');
+  
+  const request = await fetch('/api');
+  const data = await request.json();
 
-  const arrayName = await request.json();
+form.addEventListener('submit', async (event) => {
+
+  
+})
 
   //   fetch(endpoint).then((blob) => console.log(blob));
   //   const prom = fetch(endpoint)
