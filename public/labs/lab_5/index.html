@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="columns">
-      <div class="column is-mobile">
+    <div class="columns is-centered">
+      <div class="column">
         <section class="section">
           <div class="container">
             <h1 class="title">Rodolfo Castro Lab 5</h1>
@@ -32,25 +32,29 @@
           <form class="userform">
             <label class="label" for="zip">Search</label>
             <input
+              name="zipcode"
               class="input"
               type="text"
               placeholder="Enter your zip code"
               id="zip"
             />
-            <button class="button is-primary is-light is-focused">Submit</button>
-            <div class="suggestions">
+            <button class="button is-primary is-light is-focused "type ="submit">Submit</button>
+            <ul class="suggestions">
   
               <!-- <p>Filter for the name of a restaurant</p> -->
         
-            </div>
+            </ul>
           </form>
         </section>
-      </div>
-      <div class="column is-mobile">
-        <div id="mapid"></div>
+      </div >
+      <div class = "column is-vcentered">
+        <div class ="column">
+          <div id="mapid"></div>
+        </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
+ 
 </html>
 
