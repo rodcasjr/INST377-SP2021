@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isJumping = true;
   let isGoingLeft = false;
   let isGoingRight = false;
+  let score = 0
   
 
   function createDoodler() { // function that creates doodler
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove('platform');
           platforms.shift();
+          score++;
           console.log(platforms);
           let newPlatform = new Platform(600);
           platforms.push(newPlatform);
@@ -71,8 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
     upTimerId = setInterval(() => {
       doodlerBottomSpace += 20; // add space to bottom of doodler//
       doodler.style.bottom = `${doodlerBottomSpace}px`;
-      if (doodlerBottomSpace > startPoint + 200) {
+      if (doodlerBottomSpace > (startPoint + 200)) {
         fall();
+        isJumping = false;
       }
     }, 30);
   }
@@ -105,8 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver() {
     console.log('game over');
     isGamerOver = true;
+    while (grid.firstChild) {
+      grid.removeChild(grid.firstChild);
+    }
+    grid.innerHTML = score
     clearInterval(upTimerId);
     clearInterval(downTimerId);
+    clearInterval(leftTimerId);
+    clearInterval(rightTimerId);
   }
 
   function control(e) {
@@ -130,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         doodlerLeftSpace -= 5;
         doodler.style.left = `${doodlerLeftSpace}px`;
       } else moveRight();
-    }, 30);
+    }, 20);
   }
 
   function moveRight() {
@@ -144,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         doodlerLeftSpace += 5;
         doodler.style.left = `${doodlerLeftSpace}px`;
       } else moveLeft();
-    }, 30);
+    }, 20);
   }
   function moveStraight() {
     isGoingRight = false;
